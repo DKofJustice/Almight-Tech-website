@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function LandingSection() {
   return (
-    <section>
+    <section className='landing-section'>
        <div className='landing-background'><img src="" alt="" /></div>
 
        <div className='landing-content'>

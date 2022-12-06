@@ -1,0 +1,57 @@
+@use './../utilForward' as *;
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    @include flex(row, flex-start, flex-start);
+    padding-inline: 2.2rem;
+    padding-block: 1.4rem;
+    padding-top: 2rem;
+
+    @include respondTo(desktop) {
+        padding-inline: 9rem;
+        padding-top: 4rem;
+    }
+
+    h3 {
+        color: $primary-text-color;
+        font-weight: 100;
+        font-size: $h3-400;
+
+        @include respondTo(desktop) {
+            font-size: $h3-500;
+        }
+    }
+
+    h3 span {
+        font-weight: 700;
+    }
+}
+
+nav {
+    margin-left: auto;
+    @include flex(column, center, flex-start);
+    row-gap: 1.4rem;
+
+    & > * {
+        color: $primary-text-color;
+        text-decoration: none;
+        font-weight: 300;
+        transition: 0.2s all ease-in-out;
+        border-bottom: 1.4px solid transparent;
+        padding-bottom: 0.3rem;
+        font-size: $p-400;
+
+        @include respondTo(desktop) {
+            font-size: $p-500;
+        }
+
+        &:hover {
+            color: $secondary-text-color;
+            border-bottom: 1.4px solid $secondary-text-color;
+        }
+    }
+}

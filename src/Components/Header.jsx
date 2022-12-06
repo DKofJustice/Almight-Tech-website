@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
   return (
     <header>
-        <h3>Amight <span>Tech</span></h3>
+        <h3>Almight <span>Tech</span></h3>
 
         <nav>
-            <p>Homepage</p>
-            <p>Service</p>
-            <p>Contact</p>
+            <Link to="/">Homepage</Link>
+            <Link to="/service">Service</Link>
+            <Link to="/contact">Contact</Link>
         </nav>
     </header>
   )
