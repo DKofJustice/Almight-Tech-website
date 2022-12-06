@@ -4,7 +4,8 @@ header {
     width: 100%;
     height: auto;
     background-color: transparent;
-    position: sticky;
+    position: fixed;
+    z-index: 2000;
     top: 0;
     @include flex(row, flex-start, flex-start);
     padding-inline: 2.2rem;
@@ -20,6 +21,7 @@ header {
         color: $primary-text-color;
         font-weight: 100;
         font-size: $h3-400;
+        cursor: pointer;
 
         @include respondTo(desktop) {
             font-size: $h3-500;

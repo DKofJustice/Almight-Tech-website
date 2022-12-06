@@ -2,4 +2,117 @@
 
 .landing-section {
     width: 100%;
+    height: 700px;
+    position: relative;
+
+    @include respondTo(desktop) {
+        height: 900px;
+        max-height: 1080px;
+    }
+
+    .landing-background {
+        height: 100%;
+        position: absolute;
+        z-index: 1000;
+        overflow: hidden;
+    }
+    
+    .landing-background img {
+        width: 1200px;
+        height: 100%;
+    
+        @include respondTo(desktop) {
+            width: initial;
+            max-width: 150%;
+            height: auto;
+        }
+    }
+
+    .landing-illustration {
+        position: absolute;
+        z-index: 1200;
+        left: 20%;
+        bottom: 20%;
+
+        @include respondTo(desktop) {
+            left: 50%;
+            bottom: 40%;
+        }
+    }
+    
+    .landing-content {
+        background-color: rgba($color: #D9D9D9, $alpha: 0.09);
+        position: absolute;
+        z-index: 1500;
+        bottom: 0;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        color: $primary-text-color;
+        padding-inline: 2rem;
+
+        @include respondTo(desktop) {
+            width: 75%;
+            max-width: 1700px;
+            height: 80%;
+            padding-inline: 9rem;
+        }
+
+        h1 {
+            max-width: 300px;
+            font-size: $h1-400;
+            margin-top: 4rem;
+
+            @include respondTo(desktop) {
+                max-width: 500px;
+                font-size: 4rem;
+                margin-top: 7rem;
+            }
+        }
+
+        p {
+            max-width: 500px;
+            font-size: $p-400;
+            font-weight: 300;
+            margin-top: 2rem;
+            line-height: 30px;
+
+            @include respondTo(desktop) {
+                max-width: 400px;
+                font-size: $p-500;
+                margin-top: 4rem;
+                line-height: 40px;
+            }
+        }
+
+        .call-to-action {
+            width: fit-content;
+            margin-top: 5rem;
+            margin-bottom: 7rem;
+            @include flex(row, flex-start, center);
+            column-gap: 1rem;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.2s ease-in-out all;
+            border-radius: 15px;
+            padding: 0.5rem;
+            margin-left: -0.5rem;
+
+            @include respondTo(desktop) {
+                margin-bottom: 10rem;
+            }
+
+            &:hover {
+                border: 2px solid $primary-text-color;
+            }
+
+            img {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            h3 {
+                font-size: $h3-400;
+            }
+        }
+    }
 }
