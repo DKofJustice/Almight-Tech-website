@@ -5,6 +5,7 @@ import ImageSlide3 from './../Assets/featuresImageSlide3.jpg';
 import ImageSlide4 from './../Assets/featuresImageSlide4.jpg';
 import ImageSlide5 from './../Assets/featuresImageSlide5.jpg';
 import LeftArrow from './../Assets/arrow_circle_left_FILL0_wght400_GRAD0_opsz48 1.svg';
+import RightArrow from './../Assets/arrow_circle_right_FILL0_wght400_GRAD0_opsz48 1.svg';
 
 export default function Features() {
 
@@ -43,7 +44,7 @@ export default function Features() {
                 <div className='page-slides slide-4'></div>
             </div>
 
-            <div className='arrow-right'><img src="" alt="" /></div>
+            <div className='arrow-right'><img src={RightArrow} alt="right-arrow" /></div>
            </div>
         </div>
     </section>
