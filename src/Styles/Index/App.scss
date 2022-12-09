@@ -16,6 +16,20 @@ body {
     background-color: $primary-color;
 }
 
+
+
+p {
+    font-size: $p-400;
+    font-weight: 300;
+    line-height: 40px;
+
+    @include respondTo(dekstop) {
+        font-size: $p-500;
+    }
+}
+
+
+
 .App {
     width: 100vw;
     height: 100%;
