@@ -1,0 +1,13 @@
+@use './../utilForward' as *;
+
+.call-to-action {
+    position: relative;
+
+    .call-to-action-bkg {
+        
+    }
+}
+
+.CTA-body {
+    background-color: rgba($color: #B5B5B5, $alpha: 0.47);
+}
