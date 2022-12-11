@@ -3,18 +3,13 @@ import Star from './../Assets/star_FILL0_wght400_GRAD0_opsz48 1.png';
 
 export default function UserReview({ image }) {
 
-  let stars = [];
+  let stars = Array(5).fill(<img src={Star} className='star' alt='star' />);
 
-  for(let i = 0; i < 6; i++) {
-    stars.concat(<Star/>);
-    i++;
-  };
-
-  console.log(stars)
+  console.log(stars);
 
   return (
     <div className='user-review'>
-        <img src={image} alt="user-img" />
+        <img src={image} className='profile-image' alt="user-img" />
 
         <div className='rating'>{stars}</div>
 

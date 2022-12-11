@@ -2,4 +2,145 @@
 
 .testimonials {
     width: 100%;
+    height: auto;
+    margin-top: 12rem;
+    position: relative;
+    @include flex(column, center, center);
+
+    .testimonials-background {
+        width: 100%;
+        max-width: 70rem;
+        height: 30rem;
+        position: absolute;
+        z-index: 500;
+        overflow: hidden;
+        @include flex(row, center, center);
+
+        @include respondTo(desktop) {
+            width: 60%;
+        }
+    }
+    
+    .testimonials-content {
+        width: 100%;
+        position: relative;
+        z-index: 1800;
+        padding-top: 6rem;
+        padding-bottom: 10rem;
+        padding-inline: 2.5rem;
+        background-color: rgba($color: #BDBDBD, $alpha: 0.24);
+        backdrop-filter: blur(7px);
+        @include flex(column, center, flex-start);
+        row-gap: 4rem;
+
+        @include respondTo(tablet) {
+            padding-inline: 3rem;
+            row-gap: 6rem;
+        }
+
+        @include respondTo(desktop) {
+            @include flex(column, center, center);
+            padding-top: 10rem;
+            padding-bottom: 16rem;
+        }
+
+        h2 {
+            font-size: $h2-400;
+            font-weight: 500;
+            color: $primary-text-color;
+
+            @include respondTo(tablet) {
+                margin-left: 3rem;
+            }
+
+            @include respondTo(desktop) {
+                width: 1042px;
+                font-size: $h2-500;
+                margin-left: 0;
+            }
+
+            @include respondTo(desktop-large) {
+                width: 1522px;
+            }
+        }
+
+        .testimonials-slider {
+            @include flex(row, center, center);
+            flex-wrap: wrap;
+            row-gap: 1.4rem;
+            column-gap: 1.4rem;
+
+            @include respondTo(desktop) {
+                @include flex(row, flex, center);
+                flex-wrap: nowrap;
+                column-gap: 3.5rem;
+            }
+
+            .user-review {
+                width: 100%;
+                max-width: 310px;
+                background-color: #EAEAEA;
+                display: grid;
+                grid-template-areas: 
+                'image rating'
+                'review review';
+                padding-inline: 2rem;
+                padding-top: 1.7rem;
+                padding-bottom: 2rem;
+
+                @include respondTo(desktop-large) {
+                    grid-template-areas: 
+                    'image rating'
+                    '. review';
+                    column-gap: 2rem;
+                    max-width: 470px;
+                    height: 280px;
+                    padding-top: 2.5rem;
+                    padding-inline: 3rem;
+                }
+
+                .profile-image {
+                    width: 3.5rem;
+                    height: 3.5rem;
+                    grid-area: image;
+
+                    @include respondTo(desktop-large) {
+                        width: 6rem;
+                        height: 6rem;
+                    }
+                }
+                
+                .rating {
+                    width: fit-content;
+                    height: fit-content;
+                    grid-area: rating;
+                    @include flex(row, center, center);
+
+                    @include respondTo(desktop-large) {
+                        @include flex(row, flex-start, flex-start);
+                    }
+
+                    .star {
+                        width: 1.4rem;
+                        height: 1.4rem;
+
+                        @include respondTo(desktop) {
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+
+                .user-statement {
+                    grid-area: review;
+                    margin-top: 1rem;
+                    line-height: 35px;
+
+                    @include respondTo(desktop-large) {
+                        margin-top: -4rem;
+                    }
+                }
+            }
+        }
+    }
 }
