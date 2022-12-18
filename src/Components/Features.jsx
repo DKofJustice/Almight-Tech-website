@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import ImageSlide1 from './../Assets/featuresImageSlide1.png';
 import ImageSlide2 from './../Assets/featuresImageSlide2.jpg';
 import ImageSlide3 from './../Assets/featuresImageSlide3.jpg';
@@ -9,6 +9,8 @@ import RightArrow from './../Assets/arrow_circle_right_FILL0_wght400_GRAD0_opsz4
 
 export default function Features() {
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const imageSlides = [
     { url: ImageSlide1, title: 'Computer' },
     { url: ImageSlide2, title: 'Computer' },
@@ -16,13 +18,28 @@ export default function Features() {
     { url: ImageSlide4, title: 'Computer' },
     { url: ImageSlide5, title: 'Computer' },
   ];
-  console.log(imageSlides);
+
+  const goToPrevious = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? imageSlides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToNext = () => {
+    const isLastSlide = currentIndex === imageSlides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  }
 
 
   return (
     <section className='features'>
         <div className='features-left'>
-          <img src={imageSlides[0].url} alt="slides" />
+          <img src={imageSlides[currentIndex].url} alt="slides" />
         </div>
 
         <div className='features-right'>
@@ -35,16 +52,24 @@ export default function Features() {
            </div>
 
            <div className='features-nav'>
-            <div className='arrow-left'><img src={LeftArrow} alt="left-arrow" /></div>
+            <div className='arrow-left' onClick={() => goToPrevious()}><img src={LeftArrow} alt="left-arrow" /></div>
 
             <div className='features-pages'>
-                <div className='page-slides slide-1'></div>
-                <div className='page-slides slide-2'></div>
-                <div className='page-slides slide-3'></div>
-                <div className='page-slides slide-4'></div>
+                {imageSlides.map((slide, slideIndex) => {
+                  return <div 
+                    className={`page-slides slide-${slideIndex}`}
+                    key={slideIndex}
+                    style={{ 
+                      backgroundColor: currentIndex === slideIndex ? '#C01EBA' : 'white',
+                      transition: '0.2s all ease-in-out'
+                    }}
+                    onClick={() => goToSlide(slideIndex)}
+                  >
+                  </div>
+                })}
             </div>
 
-            <div className='arrow-right'><img src={RightArrow} alt="right-arrow" /></div>
+            <div className='arrow-right' onClick={() => goToNext()}><img src={RightArrow} alt="right-arrow" /></div>
            </div>
         </div>
     </section>

@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
+import YoutubeIcon from './../Assets/bi_youtube.svg';
+import FacebookIcon from './../Assets/gg_facebook.svg';
+import TwitterIcon from './../Assets/mdi_twitter.svg';
 
 export default function Footer() {
   return (
     <footer>
         <div className='footer-content'>
-            <h3>Almight <span>Tech</span></h3>
+            <h3 className='logo-title'>Almight <span>Tech</span></h3>
             <ul className='site-map'>
                 <h3>Site Map</h3>
                 <li>Homepage</li>
@@ -20,19 +23,19 @@ export default function Footer() {
                 <li>contact@almighttech.com</li>
             </ul>
 
-            <ul className='Legal'>
+            <ul className='legal'>
                 <h3>Legal</h3>
                 <li>Terms</li>
                 <li>Privacy</li>
             </ul>
 
             <ul className='social-links'>
-                <li><img src="" alt="" /></li>
-                <li><img src="" alt="" /></li>
-                <li><img src="" alt="" /></li>
+                <li><img src={YoutubeIcon} alt="youtube-icon" /></li>
+                <li><img src={FacebookIcon} alt="facebook-icon" /></li>
+                <li><img src={TwitterIcon} alt="Twitter-icon" /></li>
             </ul>
 
-            <p>Created by Alex Benta</p>
+            <p className='created-by'>Created by Alex Benta</p>
         </div>
     </footer>
   )

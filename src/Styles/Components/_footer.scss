@@ -1,0 +1,98 @@
+@use './../utilForward' as *;
+
+footer {
+    width: 100%;
+    background-color: $secondary-color-red;
+
+    .footer-content {
+        padding-block: 4rem;
+        padding-inline: 3rem;
+
+        @include respondTo(tablet) {
+            display: grid;
+            grid-template-areas: 
+            'title . .'
+            'map contact legal'
+            '. social .'
+            '. creator .';
+            align-items: center;
+            justify-items: center;
+            padding-block: 4rem;
+            padding-inline: 3rem;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h3 {
+            width: 20ch;
+            color: $primary-text-color;
+            font-size: $h3-400;
+            font-weight: 500;
+            line-height: 50px;
+            margin-block: 1rem;
+        }
+
+        .logo-title {
+            font-size: $h3-400;
+            font-weight: 200;
+            margin-bottom: 4rem;
+
+            span {
+                font-weight: 600;
+            }
+
+            @include respondTo(tablet) {
+                grid-area: title;
+                font-size: $h3-500;
+            }
+        }
+
+        li {
+            width: fit-content;
+            font-size: $p-400;
+            color: $secondary-text-color;
+            font-weight: 300;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .site-map {
+            @include respondTo(tablet) {
+                grid-area: map;
+            }
+        }
+
+        .contact {
+            @include respondTo(tablet) {
+                grid-area: contact;
+            }
+        }
+
+        .legal {
+            @include respondTo(tablet) {
+                grid-area: legal;
+            }
+        }
+
+        .social-links {
+            @include flex(row, flex-start, center);
+            column-gap: 2rem;
+            margin-block: 2rem;
+            cursor: pointer;
+
+            @include respondTo(tablet) {
+                grid-area: social;
+            }
+        }
+
+        .created-by {
+            color: $secondary-text-color;
+
+            @include respondTo(tablet) {
+                grid-area: creator;
+            }
+        }
+    }
+}
