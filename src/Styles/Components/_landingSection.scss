@@ -11,6 +11,7 @@
     }
 
     .landing-background {
+        width: 100%;
         height: 100%;
         position: absolute;
         z-index: 1000;
@@ -22,8 +23,7 @@
         height: 100%;
     
         @include respondTo(desktop) {
-            width: initial;
-            max-width: 150%;
+            width: 150%;
             height: auto;
         }
     }

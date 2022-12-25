@@ -1,0 +1,142 @@
+@use './../utilForward' as *;
+
+.prices-page {
+    width: 100%;
+}
+
+.partial-background {
+    width: 100%;
+    height: 14rem;
+    overflow: hidden;
+    position: relative;
+
+    @include respondTo(desktop) {
+        height: 18rem;
+    }
+
+    img {
+        position: absolute;
+        top: -10rem;
+        width: 100%;
+        height: auto;
+        transform: scale(2);
+
+        @include respondTo(desktop) {
+            transform: initial;
+        }
+    }
+}
+
+.pricing-section {
+    .pricing-content {
+        padding-top: 12rem;
+        padding-bottom: 12rem;
+
+        h2.pricing-text {
+            width: fit-content;
+            margin-inline: auto;
+            text-align: center;
+            margin-bottom: 10rem;
+            font-size: $h2-400;
+            color: $primary-text-color;
+
+            @include respondTo(desktop) {
+                margin-bottom: 16rem;
+                font-size: $h2-500;
+            }
+        }
+
+        .pricing-plans {
+            @include flex(row, center, center);
+            flex-wrap: wrap;
+            column-gap: 7rem;
+            row-gap: 4rem;
+
+            .pricing-plan {
+                width: 25rem;
+                background-color: $primary-color-blue;
+
+                .plan-name {
+                    background-color: $color-blue-300;
+                    @include flex(row, center, center);
+                    padding-top: 4rem;
+                    padding-bottom: 3rem;
+
+                    h2 {
+                        font-size: $h2-400;
+
+                        @include respondTo(desktop) {
+                            font-size: $h2-500;
+                        }
+                    
+                    }
+                }
+
+                .price-and-features {
+                    @include flex(column, center, center);
+
+                    h3 {
+                        width: fit-content;
+                        margin-inline: auto;
+                        font-size: $h3-400;
+                        color: $primary-color;
+                        margin-block: 2rem;
+
+                        @include respondTo(desktop) {
+                            font-size: $h2-500;
+                        }
+                    }
+
+                    ul {
+                        list-style-type: none;
+                        @include flex(column, center, center);
+                        row-gap: 1.6rem;
+
+                        li {
+                            @include flex(row, flex-start, flex-start);
+                            padding-right: 3rem;
+
+                            img {
+                                padding-inline: 2rem;
+                            }
+
+                            p {
+                                margin-top: -6px;
+                                font-weight: 500;
+                                font-size: $p-400;
+                                color: $primary-color;
+
+                                @include respondTo(desktop) {
+                                    font-size: $p-500;
+                                }
+                            }
+                        }
+                    }
+
+                    button.apply-btn {
+                        border: none;
+                        border-radius: 6px;
+                        padding-block: 1rem;
+                        padding-inline: 3rem;
+                        margin-block: 4rem;
+                        margin-inline: auto;
+                        font-size: $p-400;
+                        font-weight: 500;
+                        background-color: $red-300;
+                        color: $primary-text-color;
+                        cursor: pointer;
+                        transition: 0.2s all ease-in-out;
+
+                        @include respondTo(desktop) {
+                            font-size: $h2-500;
+                        }
+
+                        &:hover {
+                            background-color: #EA5B5B;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

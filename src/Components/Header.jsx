@@ -20,7 +20,7 @@ export default function Header() {
 
         <nav>
             <Link to="/">Homepage</Link>
-            <Link to="/service">Service</Link>
+            <Link to="/services">Service</Link>
             <Link to="/contact">Contact</Link>
         </nav>
     </header>
