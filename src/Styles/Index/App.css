@@ -21,6 +21,9 @@ header {
     padding-top: 4rem;
   }
 }
+header a {
+  text-decoration: none;
+}
 header h3 {
   color: #FFFFFF;
   font-weight: 100;
@@ -869,11 +872,6 @@ footer .footer-content .created-by {
   color: #FFFFFF;
   cursor: pointer;
   transition: 0.2s all ease-in-out;
-}
-@media (min-width: 1024px) {
-  .pricing-section .pricing-content .pricing-plans .pricing-plan .price-and-features button.apply-btn {
-    font-size: 2.5rem;
-  }
 }
 .pricing-section .pricing-content .pricing-plans .pricing-plan .price-and-features button.apply-btn:hover {
   background-color: #EA5B5B;

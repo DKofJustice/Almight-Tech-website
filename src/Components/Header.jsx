@@ -16,7 +16,9 @@ export default function Header() {
 
   return (
     <header className={`${headerIsScrolled}`}>
-        <h3>Almight <span>Tech</span></h3>
+        <Link to="/">
+          <h3>Almight <span>Tech</span></h3>
+        </Link>
 
         <nav>
             <Link to="/">Homepage</Link>
