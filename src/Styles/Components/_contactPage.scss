@@ -1,0 +1,27 @@
+@use './../utilForward' as *;
+
+.contact-us {
+    width: 100%;
+}
+
+.contact-title {
+    width: fit-content;
+    margin-inline: auto;
+    @include flex(column, center, center);
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+
+    h2 {
+        color: $primary-text-color;
+        font-size: $h2-400;
+    }
+
+    p {
+        color: $secondary-text-color;
+        font-size: $p-400;
+    }
+}
+
+.contact-container {
+    width: 100%;
+}
