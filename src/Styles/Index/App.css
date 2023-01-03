@@ -877,6 +877,35 @@ footer .footer-content .created-by {
   background-color: #EA5B5B;
 }
 
+.contact-us {
+  width: 100%;
+}
+
+.contact-title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 4rem;
+}
+.contact-title h2 {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+}
+.contact-title p {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+
+.contact-container {
+  width: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

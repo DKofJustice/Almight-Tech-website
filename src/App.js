@@ -5,6 +5,7 @@ import Footer from './Components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import UpArrow from './Assets/expand_less_FILL0_wght400_GRAD0_opsz48.svg';
 import Prices from './Pages/Prices/Prices';
+import Contact from './Pages/Contact Us/Contact';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage/>}/>
         <Route path="/services" element={<Prices/>}/>
+        <Route path='/contact' element={<Contact/>} />
       </Routes>
       <Footer />
     </div>
