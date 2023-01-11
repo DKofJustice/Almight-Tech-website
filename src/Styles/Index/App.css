@@ -890,20 +890,246 @@ footer .footer-content .created-by {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
+}
+@media (min-width: 1024px) {
+  .contact-title {
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+  }
 }
 .contact-title h2 {
   color: #FFFFFF;
   font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 1024px) {
+  .contact-title h2 {
+    font-size: 2.5rem;
+  }
 }
 .contact-title p {
+  width: 40ch;
+  text-align: center;
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
+}
+@media (min-width: 1024px) {
+  .contact-title p {
+    font-size: 1.4rem;
+    width: 50ch;
+  }
 }
 
 .contact-container {
   width: 100%;
+  max-width: 100rem;
+  margin-bottom: 15rem;
+}
+@media (min-width: 767px) {
+  .contact-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .contact-container {
+    margin-bottom: 20rem;
+  }
+}
+
+.contact-left {
+  background-color: #6D84B1;
+  position: relative;
+  overflow: hidden;
+}
+@media (min-width: 767px) {
+  .contact-left {
+    width: 50%;
+    height: 55rem;
+  }
+}
+.contact-left .circle-image-mask {
+  position: absolute;
+  top: -12rem;
+  left: -12rem;
+  z-index: 500;
+}
+.contact-left .circle-image-mask .circle-image {
+  width: 528px;
+  height: 528px;
+  border-radius: 50%;
+  background: linear-gradient(189.99deg, #B3ACFF 33.02%, rgba(105, 170, 174, 0) 82.99%);
+}
+.contact-left .contact-left-content, .contact-left form {
+  position: relative;
+  z-index: 1000;
+  padding-left: 2rem;
+}
+@media (min-width: 1024px) {
+  .contact-left .contact-left-content, .contact-left form {
+    padding-left: 5rem;
+  }
+}
+.contact-left .contact-left-content {
+  padding-top: 4rem;
+  padding-bottom: 6rem;
+}
+.contact-left .contact-left-content h2 {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 1024px) {
+  .contact-left .contact-left-content h2 {
+    font-size: 2.5rem;
+  }
+}
+.contact-left .contact-left-content p {
+  width: 40ch;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+@media (min-width: 1024px) {
+  .contact-left .contact-left-content p {
+    font-size: 1.1rem;
+    width: 50ch;
+  }
+}
+.contact-left form {
+  max-width: 32rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 3rem;
+  -moz-column-gap: 3rem;
+       column-gap: 3rem;
+  padding-bottom: 4rem;
+}
+.contact-left form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+.contact-left form div label {
+  color: rgba(255, 255, 255, 0.6);
+  transition: 0.2s all ease-in-out;
+}
+.contact-left form div input, .contact-left form div textarea {
+  outline: none;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  background: none;
+  color: #FFFFFF;
+  transition: 0.2s all ease-in-out;
+}
+.contact-left form div textarea {
+  resize: none;
+}
+.contact-left form div textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.contact-left form div textarea:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.contact-left form div textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+.contact-left form div:focus-within label {
+  color: #FFFFFF;
+}
+.contact-left form div:focus-within input {
+  border-bottom: 1px solid #FFFFFF;
+}
+.contact-left form button {
+  background-color: #FFFFFF;
+  color: #181515;
+  border: none;
+  font-weight: 600;
+  padding: 0.6rem 2rem;
+}
+
+.contact-right {
+  background-color: #147D9E;
+  position: relative;
+}
+@media (min-width: 767px) {
+  .contact-right {
+    width: 50%;
+    height: 55rem;
+  }
+}
+.contact-right .contact-right-content {
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+}
+.contact-right .contact-right-content h2, .contact-right .contact-right-content p, .contact-right .contact-right-content .contact-list {
+  margin-left: 5rem;
+}
+.contact-right .contact-right-content h2 {
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+@media (min-width: 1024px) {
+  .contact-right .contact-right-content h2 {
+    font-size: 2.5rem;
+  }
+}
+.contact-right .contact-right-content p {
+  width: 40ch;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+@media (min-width: 1024px) {
+  .contact-right .contact-right-content p {
+    font-size: 1.1rem;
+    width: 50ch;
+  }
+}
+.contact-right .contact-right-content .contact-list {
+  list-style: none;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 2rem;
+}
+.contact-right .contact-right-content .contact-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.contact-right .contact-right-content .contact-list li img {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+.contact-right .contact-right-content .contact-list li p {
+  color: white;
+}
+.contact-right .contact-right-content .contact-image-list {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.contact-right .contact-right-content .contact-image-list li {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 225px;
+  overflow: hidden;
 }
 
 * {
@@ -911,6 +1137,7 @@ footer .footer-content .created-by {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 html, body {
@@ -925,6 +1152,10 @@ p {
   font-size: 1rem;
   font-weight: 300;
   line-height: 40px;
+}
+
+input, textarea, button {
+  font-family: "Roboto", sans-serif;
 }
 
 .App {

@@ -1,7 +1,6 @@
 import React from 'react';
 import PhoneIcon from './../Assets/ic_baseline-phone-min.png';
 import EmailIcon from './../Assets/ic_round-email-min.png';
-import SquareMask from './../Assets/Square Mask.png';
 import DeskPhone from './../Assets/iPhone Desk Image.png';
 
 export default function ContactForm() {
@@ -51,7 +50,7 @@ export default function ContactForm() {
         <div className='contact-right'>
           <div className='contact-right-content'>
             <h2>Contact Information</h2>
-            <p>You can reach us for any business request with the below contact details</p>
+            <p>You can reach us for any business request with the below contact details:</p>
 
             <ul className='contact-list'>
               <li className='phone-item'>
@@ -66,7 +65,6 @@ export default function ContactForm() {
             </ul>
 
             <ul className='contact-image-list'>
-              <li><img src={SquareMask} alt="square-mask" /></li>
               <li><img src={DeskPhone} alt="desk-phone" /></li>
             </ul>
           </div>

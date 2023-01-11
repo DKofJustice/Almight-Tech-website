@@ -8,20 +8,240 @@
     width: fit-content;
     margin-inline: auto;
     @include flex(column, center, center);
-    padding-top: 6rem;
+    padding-top: 4rem;
     padding-bottom: 4rem;
+
+    @include respondTo(desktop) {
+        padding-top: 15rem;
+        padding-bottom: 15rem;
+    }
 
     h2 {
         color: $primary-text-color;
         font-size: $h2-400;
+        margin-bottom: 2rem;
+
+        @include respondTo(desktop) {
+            font-size: $h2-500;
+        }
     }
 
     p {
+        width: 40ch;
+        text-align: center;
         color: $secondary-text-color;
         font-size: $p-400;
+
+        @include respondTo(desktop) {
+            font-size: 1.4rem;
+            width: 50ch;
+        }
     }
 }
 
 .contact-container {
     width: 100%;
+    max-width: 100rem;
+    margin-bottom: 15rem;
+
+    @include respondTo(tablet) {
+        @include flex(row, center, center);
+        margin-inline: auto;
+    }
+
+    @include respondTo(desktop) {
+        margin-bottom: 20rem;
+    }
+}
+
+.contact-left {
+    background-color: #6D84B1;
+    position: relative;
+    overflow: hidden;
+    @include respondTo(tablet) {
+        width: 50%;
+        height: 55rem;
+    }
+
+    .circle-image-mask {
+        position: absolute;
+        top: -12rem;
+        left: -12rem;
+        z-index: 500;
+
+        .circle-image {
+            width: 528px;
+            height: 528px;
+            border-radius: 50%;
+            background: linear-gradient(189.99deg, #B3ACFF 33.02%, rgba(105, 170, 174, 0) 82.99%);
+        }
+    }
+
+    .contact-left-content, form {
+        position: relative;
+        z-index: 1000;
+        padding-left: 2rem;
+
+        @include respondTo(desktop) {
+            padding-left: 5rem;
+        }
+    }
+
+    .contact-left-content {
+        padding-top: 4rem;
+        padding-bottom: 6rem;
+
+        h2 {
+            color: $primary-text-color;
+            font-size: $h2-400;
+            margin-bottom: 2rem;
+
+            @include respondTo(desktop) {
+                font-size: $h2-500;
+            }
+        }
+    
+        p {
+            width: 40ch;
+            color: $secondary-text-color;
+            font-size: $p-400;
+
+            @include respondTo(desktop) {
+                font-size: $p-500;
+                width: 50ch;
+            }
+        }
+    }
+
+    form {
+        max-width: 32rem;
+        @include flex(row, flex-start, center);
+        flex-wrap: wrap;
+        row-gap: 3rem;
+        column-gap: 3rem;
+        padding-bottom: 4rem;
+
+        @include respondTo(dekstop) {
+            @include flex(row, flex-start, center);
+        }
+
+        div {
+            @include flex(column, center, flex-start);
+            row-gap: 1rem;
+
+            label {
+                color: $secondary-text-color;
+                transition: 0.2s all ease-in-out;
+            }
+
+            input, textarea {
+                outline: none;
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid $secondary-text-color;
+                background: none;
+                color: $primary-text-color;
+                transition: 0.2s all ease-in-out;
+            }
+
+            textarea {
+                resize: none;
+            }
+
+            textarea::placeholder {
+                color: $secondary-text-color;
+            }
+        }
+
+        div:focus-within {
+            label {
+                color: $primary-text-color;
+            }
+
+            input {
+                border-bottom: 1px solid $primary-text-color;
+            }
+        }
+
+        button {
+            background-color: $primary-text-color;
+            color: $primary-color;
+            border: none;
+            font-weight: 600;
+            padding: 0.6rem 2rem;
+        }
+    }
+}
+
+.contact-right {
+    background-color: #147D9E;
+    position: relative;
+
+    @include respondTo(tablet) {
+        width: 50%;
+        height: 55rem;
+    }
+
+    .contact-right-content {
+        padding-top: 4rem;
+        padding-bottom: 10rem;
+
+        h2, p, .contact-list {
+            margin-left: 5rem;
+        }
+    
+        h2 {
+            color: $primary-text-color;
+            font-size: $h2-400;
+            margin-bottom: 2rem;
+    
+            @include respondTo(desktop) {
+                font-size: $h2-500;
+            }
+        }
+
+        p {
+            width: 40ch;
+            color: $secondary-text-color;
+            font-size: $p-400;
+
+            @include respondTo(desktop) {
+                font-size: $p-500;
+                width: 50ch;
+            }
+        }
+
+        .contact-list {
+            list-style: none;
+            padding-top: 4rem;
+            padding-bottom: 10rem;
+            @include flex(column, flex-start, flex-start);
+            row-gap: 2rem;
+
+            li {
+                @include flex(row, flex-start, center);
+
+                img {
+                    width: 1.3rem;
+                    height: 1.3rem;
+                }
+                
+                p {
+                    color: white;
+                }
+            }
+        }
+
+        .contact-image-list {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            li {
+                width: fit-content;
+                height: 225px;
+                overflow: hidden;
+            }
+        }
+    }
 }
